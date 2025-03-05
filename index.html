@@ -1,30 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Loan Application Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Ticket Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h2>Loan Application Form</h2>
-    <form action="https://hook.make.com/YOUR-WEBHOOK-URL" method="post">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+<div class="form-container">
+    <h2>Customer Support Ticket Form</h2>
+    <form action="https://your-webhook-url-here" method="POST">
+        <label for="name">Customer Name</label>
+        <input type="text" id="name" name="customer_name" required>
 
-        <label for="loanAmount">Loan Amount:</label>
-        <input type="number" id="loanAmount" name="loanAmount" required><br><br>
+        <label for="email">Customer Email</label>
+        <input type="email" id="email" name="customer_email" required>
 
-        <label for="tenure">Loan Tenure (Months):</label>
-        <input type="number" id="tenure" name="tenure" required><br><br>
+        <label for="issue_type">Issue Type</label>
+        <select id="issue_type" name="issue_type" required>
+            <option value="Technical">Technical Issue</option>
+            <option value="Billing">Billing Issue</option>
+            <option value="Product Inquiry">Product Inquiry</option>
+            <option value="Other">Other</option>
+        </select>
 
-        <label for="income">Monthly Income:</label>
-        <input type="number" id="income" name="income" required><br><br>
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Urgent">Urgent</option>
+        </select>
 
-        <label for="documents">Documents URL (Google Drive link, etc.):</label>
-        <input type="url" id="documents" name="documents"><br><br>
+        <label for="description">Issue Description</label>
+        <textarea id="description" name="issue_description" rows="4" required></textarea>
 
-        <button type="submit">Submit Application</button>
+        <label for="file">Upload Screenshot (Optional)</label>
+        <input type="file" id="file" name="screenshot">
+
+        <button type="submit">Submit Ticket</button>
     </form>
+</div>
+
 </body>
 </html>
